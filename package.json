@@ -1,7 +1,7 @@
 {
   "name": "e2e-ghost",
   "version": "1.0.0",
-  "description": "Instalar ghost.....",
+  "description": "Instalar ghost.....\r ```\r % git clone https://github.com/ingecar/E2E-GHOST.git\r Clonando en 'E2E-GHOST'...\r remote: Enumerating objects: 24, done.\r remote: Counting objects: 100% (24/24), done.\r remote: Compressing objects: 100% (11/11), done.\r remote: Total 24 (delta 0), reused 0 (delta 0), pack-reused 0\r Recibiendo objetos: 100% (24/24), 4.39 KiB | 4.39 MiB/s, listo.\r % cd E2E-GHOST \r % npm init playwright@latest\r Need to install the following packages:\r   create-playwright@latest\r Ok to proceed? (y) \r Getting started with writing end-to-end tests with Playwright:\r Initializing project in '.'\r ✔ Do you want to use TypeScript or JavaScript? · TypeScript\r ✔ Where to put your end-to-end tests? · tests\r ✔ Add a GitHub Actions workflow? (y/N) · false\r ```\r ```\r % npx playwright install  \r ```",
   "main": "index.js",
   "scripts": {},
   "repository": {
