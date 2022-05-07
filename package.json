@@ -1,0 +1,21 @@
+{
+  "name": "e2e-ghost",
+  "version": "1.0.0",
+  "description": "Instalar ghost.....",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ingecar/E2E-GHOST.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ingecar/E2E-GHOST/issues"
+  },
+  "homepage": "https://github.com/ingecar/E2E-GHOST#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.21.1"
+  }
+}
