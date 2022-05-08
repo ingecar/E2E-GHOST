@@ -1,6 +1,79 @@
-# E2E-GHOST
+##  Escenarios de pruebas E2E de Ghost con Kraken y Playwright (Semana 5)
+Para esta semana se desarrollaron pruebas de extremo a extremo con las herramientas playwright y Kraken para las funcionalidades de Post, Tags, Pages, Members y Configuracion. se desarrollaron 20 escenarios de pruebas.
 
-Instalar ghost.....
+#### Members: 
+Esta funcionalidad perite la creacion , edicion y eliminacion de miembros de Ghost
+#### Posts: 
+Esta funcionalidad perite la creacion , edicion y eliminacion de posts, gestion de publicacion y/o despublicacion  entre otras.
+#### Tags: 
+Esta funcionalidad permite crear, editar
+#### Pages: 
+#### Configuracion: 
+***
+
+#### Escenario 1: Crear miembro 
+Iniciar sesión en ghost,  acceder al menú members, click en el botón new member, diligenciar los campos del formulario, click en save,  cerrar la sesión en ghost, ingresar nuevamente a la aplicación y verificar que el miembro este creado.
+
+#### Escenario 2: Actualizar miembro existente
+Iniciar sesión en ghost, acceder al menú members, click en un miembro existente, actualizar el correo, click en save, volver a la lista de miembros y verificar que el coreo se actualizo correctamente.
+
+#### Escenario 3: Eliminar miembro existente
+Iniciar sesión en ghost, acceder al menú members, click en un miembro existente, click en la opción de configuración, click en delete member, confirmar eliminacion y verificar que el miembro se elimino del sistema.
+
+#### Escenario 4: Crear Tag
+Iniciar sesión en ghost, acceder al menú tags, click en new tag,  diligenciar los campos del formulario, click en save, volver a la lista de tags y verificar que se creo exitosamente.
+
+#### Escenario 5: Editar Tag
+Iniciar sesión en ghost, acceder al menú tags, click sobre un tag existente, editar la descriocion, click en save, volver a la lista de tags y verificar se actualizo la desripcion.
+
+#### Escenario 6: Eliminar Tag
+Iniciar sesión en ghost, acceder al menú tags, click sobre un tag existente, click en delete tag, confirmar la eliminacion, y verificar que el tag se elimino correctamente.
+
+#### Escenario 7: Crear new post
+Iniciar sesión en ghost, acceder al menú posts, click en new post,  diligenciar los campos del formulario, click en publish, confirmar la publicación, click en el menu post y verificar que se creo exitosamente.
+
+#### Escenario 8: Editar posts
+Iniciar sesión en ghost, acceder al menú posts, click en un post,  click en icono post settings, click en Facebook card, llenar el titulo y la descripción, click en update, confirmar la publicación y click en la ventana emergente view posts para previsualizar la publication.
+
+#### Escenario 9: Despublicar un post
+Iniciar sesión en ghost, acceder al menú posts, click en un post, click en icono update, click en unpublished post, confirmar la despublicacion y verificar que se aparece como draft en color rojo.
+
+#### Escenario 10: Eliminar un post
+Iniciar sesión en ghost, acceder al menú posts, click en un post, click en icono post settings, click en delete post, confirmar la eliminación y verificar que se elimino correctamente.
+
+#### Escenario 11: Modificar información de configuración
+Iniciar sesión en ghost, acceder al menú settings, click en General, modificar el título y la descripción, modificar la zona horaria, cambiar el idioma.
+
+#### Escenario 12: Cambiar enlaces a redes sociales
+Iniciar sesión en ghost, acceder al menú settings, click en General, click en el botón Social accounts, modificar los enlaces, click en guardar, verificar en el sitio público los nuevos enlaces.
+
+#### Escenario 13: Cambiar el sitio a visibilidad privada
+Iniciar sesión en ghost, acceder al menú settings, click en General, click en Make this site private, acceder al sitio web con otro usuario, verificar que esté privado, volver nuevamente público el sitio, verificar con el otro usuario que sea público.
+
+#### Escenario 14: Crear una página
+Iniciar sesión en ghost, acceder al menú Pages, click en New page,  diligenciar los campos del formulario, click en publish, confirmar la creación, click en el menú Pages y verificar que se creo exitosamente.
+
+#### Escenario 15: Programar publicación de página nueva
+Iniciar sesión en ghost, acceder al menú Pages, click en New page,  diligenciar los campos del formulario, click en publish, click en programar para despues, confirmar la creación, click en el menú Pages y verificar que se creó y que esté programada su publicación.
+
+#### Escenario 16: Crear una página como borrador
+Iniciar sesión en ghost, acceder al menú Pages, click en New page,  diligenciar los campos del formulario, hacer click en volver a Pages,  verificar que existe la página creada con estado Draft.
+
+#### Escenario 17: Asociar Post con un Tag
+Iniciar sesión en ghost, acceder al menú Post, seleccionar una Post creado, click en Post settings, seleccionar una tag, click en el dropdown menu Update, click en Update, acceder con otro usuario al sitio público, buscar los post con la tag creada, verificar que el post este listado
+
+#### Escenario 18: Desasociar un tag en Post
+Iniciar sesión en ghost, acceder al menú Post, seleccionar una Post creado, click en Post settings, deseleccionar el tag, click en el dropdown menu Update, click en Update, acceder con otro usuario al sitio público, buscar los post con la tag creada, verificar que el post no este listado
+
+#### Escenario 19: Modificar perfil de usuario autenticado
+Iniciar sesión en Ghost, hacer click en botón de configuración de perfil, modificar nombre, guardar cambios, verificar en el dropup menu que aparezca el nuevo nombre.
+
+#### Escenario 20: Cerrar sesión de miembro Staff
+Iniciar sesión en Ghost, hacer click en botón de configuración de perfil, click en Sign out, verificar que no se puede acceder al dashboard
+
+
+
+Instucciones de instalacion y ejecucion de pruebas con playwright
 ```
 % git clone https://github.com/ingecar/E2E-GHOST.git
 Clonando en 'E2E-GHOST'...
