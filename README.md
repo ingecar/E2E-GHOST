@@ -71,19 +71,22 @@ Iniciar sesión en Ghost, hacer click en botón de configuración de perfil, mod
 #### Escenario 20: Cerrar sesión de miembro Staff
 Iniciar sesión en Ghost, hacer click en botón de configuración de perfil, click en Sign out, verificar que no se puede acceder al dashboard
 
-
-
-Instucciones de instalacion y ejecucion de pruebas con playwright
+***
+### Pruebas E2E con playwright:
+#### 1. Clonar el proyecto, 2 instalar playwright en ruta local, 
 ```
-% git clone https://github.com/ingecar/E2E-GHOST.git
+git clone https://github.com/ingecar/E2E-GHOST.git
 Clonando en 'E2E-GHOST'...
 remote: Enumerating objects: 24, done.
 remote: Counting objects: 100% (24/24), done.
 remote: Compressing objects: 100% (11/11), done.
 remote: Total 24 (delta 0), reused 0 (delta 0), pack-reused 0
 Recibiendo objetos: 100% (24/24), 4.39 KiB | 4.39 MiB/s, listo.
-% cd E2E-GHOST 
-% npm init playwright@latest
+```
+#### 2 instalar playwright en ruta local con Typescript
+```
+cd E2E-GHOST 
+npm init playwright@latest
 Need to install the following packages:
   create-playwright@latest
 Ok to proceed? (y) 
@@ -93,14 +96,24 @@ Initializing project in '.'
 ✔ Where to put your end-to-end tests? · tests
 ✔ Add a GitHub Actions workflow? (y/N) · false
 ```
+#### 3 Actualizar dependencias
 ```
-% npx playwright install  
+npx playwright install  
+```
+#### 3 Actualizar dependencias
+```
+npx playwright install  
+```
+#### 4 Ejecutar los tests
+```
+npx playwright test
+```
+#### 5 Ejecutar un tests especifico
+```
+npx playwright test tests/nombre_test.ts
 ```
 
-### Pruebas E2E con playwright:
-
-1. Instalar playwright...
-
+***
 ### Pruebas E2E con Kraken:
 
 1. Instalar kraken...
