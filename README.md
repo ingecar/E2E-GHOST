@@ -2,7 +2,7 @@
 Para esta semana se desarrollaron pruebas de extremo a extremo con las herramientas playwright y Kraken para las funcionalidades de Post, Tags, Pages, Members y Configuracion. se desarrollaron 20 escenarios de pruebas.
 
 #### Members: 
-Esta funcionalidad perite la creacion , edicion y eliminacion de miembros de Ghost
+Esta funcionalidad permite la creacion , edicion y eliminacion de miembros de Ghost
 #### Posts: 
 Esta funcionalidad perite la creacion , edicion y eliminacion de posts, gestion de publicacion y/o despublicacion  entre otras.
 #### Tags: 
