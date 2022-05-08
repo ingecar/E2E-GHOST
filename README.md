@@ -1,3 +1,9 @@
+### Participantes: 
+Cesar Hernan Garcia: ch.garciaa1@uniandes.edu.co.        
+Cesar Alexander Rivera Ordoñez: c.riverao@uniandes.edu.co.       
+Andres Perez Avilan: aa.pereza1@uniandes.edu.co.       
+Jorge Andres Cardona Ortiz: j.cardonao@uniandes.edu.co.       
+***
 ##  Escenarios de pruebas E2E de Ghost con Kraken y Playwright (Semana 5)
 Para esta semana se desarrollaron pruebas de extremo a extremo con las herramientas playwright y Kraken para las funcionalidades de Post, Tags, Pages, Members y Configuracion. se desarrollaron 20 escenarios de pruebas.
 
