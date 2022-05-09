@@ -128,5 +128,19 @@ npx playwright test tests/nombre_test.ts
 ***
 ### Pruebas E2E con Kraken:
 
-1. Instalar kraken...
+#### 1. Clonar el proyecto
 
+git clone https://github.com/criverao/E2E_Ghost_Kraken.git
+
+#### 2 Instalar Kraken según el turorial
+
+#### 3 Actualizar el archivo properties.json
+
+
+Cambiar la propiedad USER por el usuario del GHOST local que se utilizará para las pruebas, debe ser un usuario administrador. 
+Cambiar la propiedad PASSWORD por el password del usuario del GHOST local que se utilizará para las pruebas. 
+Cambiar la propiedad RUTA por la ruta del GHOST loca que será usado para pruebas. 
+
+#### 3 Ejecutar cada archivo feature
+
+Se debe ejecutar cada archivo de forma independiente siguiendo el orden del numeral asociado al archivo para que las pruebas salgan de forma correcta.
