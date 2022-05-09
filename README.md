@@ -14,9 +14,9 @@ Para esta semana se desarrollaron pruebas de extremo a extremo con las herramien
 #### Members: 
 Esta funcionalidad permite la creacion , edicion y eliminacion de miembros de Ghost
 #### Posts: 
-Esta funcionalidad perite la creacion , edicion y eliminacion de posts, gestion de publicacion y/o despublicacion  entre otras.
+Esta funcionalidad perite la creacion , edicion y eliminacion de posts, gestion de publicacion y/o despublicacion  entre otras. 
 #### Tags: 
-Esta funcionalidad permite crear, editar
+Esta funcionalidad permite crear, editar y eliminar etiquetas para una publicación en particular. Por defecto es una lista separada por comas (sin marcado de lista), pero se puede personalizar para utilizar diferentes separadores, y la vinculación se puede desactivar. Las etiquetas se emiten en el orden en que aparecen en la publicación, estas se pueden reordenar arrastrando y soltando.
 #### Pages: 
 #### Configuracion: 
 ***
