@@ -54,34 +54,34 @@ Iniciar sesión en ghost, acceder al menú posts, click en un post, click en ico
 Iniciar sesión en ghost, acceder al menú posts, click en un post, click en icono post settings, click en delete post, confirmar la eliminación y verificar que se elimino correctamente.
 
 #### Escenario 11: Modificar información de configuración
-Iniciar sesión en ghost, acceder al menú settings, click en General, modificar el título y la descripción, modificar la zona horaria, cambiar el idioma.
+Iniciar sesión en ghost, acceder al menú settings, click en General, modificar el título y la descripción, modificar la zona horaria, guardar cambios, cerrar la sesión.
 
 #### Escenario 12: Cambiar enlaces a redes sociales
-Iniciar sesión en ghost, acceder al menú settings, click en General, click en el botón Social accounts, modificar los enlaces, click en guardar, verificar en el sitio público los nuevos enlaces.
+Iniciar sesión en ghost, acceder al menú settings, click en General, click en el botón Social accounts, modificar los enlaces, guardar cambios, cerrar la sesión.
 
 #### Escenario 13: Cambiar el sitio a visibilidad privada
-Iniciar sesión en ghost, acceder al menú settings, click en General, click en Make this site private, acceder al sitio web con otro usuario, verificar que esté privado, volver nuevamente público el sitio, verificar con el otro usuario que sea público.
+Iniciar sesión en ghost, acceder al menú settings, click en General, click en Make this site private, guardar cambios, cerrar sesión, acceder al sitio web público, verificar que esté privado, realizar los pasos anteriores para volver nuevamente público el sitio, verificar nuevamente que el sitio sea público.
 
 #### Escenario 14: Crear una página
-Iniciar sesión en ghost, acceder al menú Pages, click en New page,  diligenciar los campos del formulario, click en publish, confirmar la creación, click en el menú Pages y verificar que se creo exitosamente.
+Iniciar sesión en ghost, acceder al menú Pages, click en New page,  diligenciar los campos del formulario, click en publish, confirmar la creación, click en el menú Pages y cerrar la sesión de usuario.
 
 #### Escenario 15: Programar publicación de página nueva
-Iniciar sesión en ghost, acceder al menú Pages, click en New page,  diligenciar los campos del formulario, click en publish, click en programar para despues, confirmar la creación, click en el menú Pages y verificar que se creó y que esté programada su publicación.
+Iniciar sesión en ghost, acceder al menú Pages, click en New page,  diligenciar los campos del formulario, click en publish, click en programar para despues, confirmar la creación, click en el menú Pages y cerrar la sesión de usuario.
 
 #### Escenario 16: Crear una página como borrador
-Iniciar sesión en ghost, acceder al menú Pages, click en New page,  diligenciar los campos del formulario, hacer click en volver a Pages,  verificar que existe la página creada con estado Draft.
+Iniciar sesión en ghost, acceder al menú Pages, click en New page,  diligenciar los campos del formulario, hacer click en volver a Pages, verificar que existe la página creada con estado Draft, cerrar sesión de usuario.
 
 #### Escenario 17: Asociar Post con un Tag
-Iniciar sesión en ghost, acceder al menú Post, seleccionar una Post creado, click en Post settings, seleccionar una tag, click en el dropdown menu Update, click en Update, acceder con otro usuario al sitio público, buscar los post con la tag creada, verificar que el post este listado
+Iniciar sesión en ghost, acceder al menú Post, seleccionar una Post creado, click en Post settings, seleccionar una tag, click en el dropdown menu Update, click en Update, cerrar la sesión del usuario.
 
 #### Escenario 18: Desasociar un tag en Post
-Iniciar sesión en ghost, acceder al menú Post, seleccionar una Post creado, click en Post settings, deseleccionar el tag, click en el dropdown menu Update, click en Update, acceder con otro usuario al sitio público, buscar los post con la tag creada, verificar que el post no este listado
+Iniciar sesión en ghost, acceder al menú Post, seleccionar una Post creado, click en Post settings, deseleccionar el tag, click en el dropdown menu Update, click en Update, cerrar la sesión del usuario.
 
 #### Escenario 19: Modificar perfil de usuario autenticado
-Iniciar sesión en Ghost, hacer click en botón de configuración de perfil, modificar nombre, guardar cambios, verificar en el dropup menu que aparezca el nuevo nombre.
+Iniciar sesión en Ghost, hacer click en botón de configuración de perfil, modificar nombre, guardar cambios, cerrar la sesión.
 
 #### Escenario 20: Cerrar sesión de miembro Staff
-Iniciar sesión en Ghost, hacer click en botón de configuración de perfil, click en Sign out, verificar que no se puede acceder al dashboard
+Iniciar sesión en Ghost, hacer click en botón de configuración de perfil, click en Sign out.
 
 ***
 ### Pruebas E2E con playwright:
