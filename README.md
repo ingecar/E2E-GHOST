@@ -134,13 +134,21 @@ git clone https://github.com/criverao/E2E_Ghost_Kraken.git
 
 #### 2 Instalar Kraken según el turorial
 
+Para instalar Kraken siga las intrucciones de la página oficial de la herramienta:
+
+https://thesoftwaredesignlab.github.io/Kraken/#installation
+
 #### 3 Actualizar el archivo properties.json
 
+Configure el archivo properties.json con las variables de su instalación y las credencciales de acceso a Ghost:
+- Cambiar la propiedad USER por el usuario del GHOST local que se utilizará para las pruebas, debe ser un usuario administrador. 
+- Cambiar la propiedad PASSWORD por el password del usuario del GHOST local que se utilizará para las pruebas. 
+- Cambiar la propiedad RUTA por la ruta del GHOST loca que será usado para pruebas. 
 
-Cambiar la propiedad USER por el usuario del GHOST local que se utilizará para las pruebas, debe ser un usuario administrador. 
-Cambiar la propiedad PASSWORD por el password del usuario del GHOST local que se utilizará para las pruebas. 
-Cambiar la propiedad RUTA por la ruta del GHOST loca que será usado para pruebas. 
+#### 4 Ejecutar cada archivo feature
 
-#### 3 Ejecutar cada archivo feature
+Los escenarios de prueba de encuentran en el directorio principal. Para correr una prueba debe mover el archivo correspondiente a la carpeta features. Tenga en cuenta que solo debe existir un archivo .feature en esta ruta.
 
 Se debe ejecutar cada archivo de forma independiente siguiendo el orden del numeral asociado al archivo para que las pruebas salgan de forma correcta.
+
+Para correr la prueba, ejecute el comando ./node_modules/kraken-node/bin/kraken-node run en la ruta principal del proyecto.
