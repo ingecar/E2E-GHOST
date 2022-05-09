@@ -9,16 +9,18 @@
 
 ***
 ##  Escenarios de pruebas E2E de Ghost con Kraken y Playwright (Semana 5)
-Para esta semana se desarrollaron pruebas de extremo a extremo con las herramientas playwright y Kraken para las funcionalidades de Post, Tags, Pages, Members y Configuracion. se desarrollaron 20 escenarios de pruebas.
+Para esta semana se desarrollaron pruebas de extremo a extremo con las herramientas playwright y Kraken para las funcionalidades de Post, Tags, Pages, Miembros y Configuracion. se desarrollaron 20 escenarios de pruebas.
 
-#### Members: 
-Esta funcionalidad permite la creacion , edicion y eliminacion de miembros de Ghost
+#### Miembros: 
+Esta funcionalidad permite la construcción de una audiencia o comunidad de usuarios, los cuales pueden acceder a la aplicación para interactuar con ella, además de registrar nuevo contenido (posts y páginas) y suscribirse a contenido publicado por otros.
 #### Posts: 
-Esta funcionalidad perite la creacion , edicion y eliminacion de posts, gestion de publicacion y/o despublicacion  entre otras. 
+Permite crear publicaciones dentro de la aplicación para cada una de las páginas, a partir de una imagen suministrada por el usuario, un título y la descripción detallada del mismo.
 #### Tags: 
-Esta funcionalidad permite crear, editar y eliminar etiquetas para una publicación en particular. Por defecto es una lista separada por comas (sin marcado de lista), pero se puede personalizar para utilizar diferentes separadores, y la vinculación se puede desactivar. Las etiquetas se emiten en el orden en que aparecen en la publicación, estas se pueden reordenar arrastrando y soltando.
+La aplicación permite crear, editar etiquetas públicas y privadas para asignar a las publicaciones realizadas, adicionalmente se pueden asociar imágenes, descripción y personalizar los colores de cada una.
 #### Pages: 
+Esta característica de la aplicación permite crear una nueva pagina, indicando su titulo, descripción e imagen asociada. Durante el proceso se puede ver una pre visualización ajustada a diferentes tamaños de pantalla (móvil y web) y su publicación puede ser inmediata o programarla para una fecha posterior.
 #### Configuracion: 
+Desde este menú se puede acceder a un conjunto de opciones de configuración de diseño del home page y los posts del sitio web, adicionalmente es posible realizar cambios en los menús de navegación, reorganizarlos de acuerdo a las preferencias del usuario y demás características generales como el título del sitio, la zona horaria, lenguaje entre otros.
 ***
 
 #### Escenario 1: Crear miembro 
