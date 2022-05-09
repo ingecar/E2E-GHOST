@@ -124,6 +124,7 @@ npx playwright test
 ```
 npx playwright test tests/nombre_test.ts
 ```
+Se debe tener en cuenta que en los archivos se encuentra precargado el usuario y la contraseña de Ghost (la cual es independiente para cada tester). Se debe cambiar antes de iniciar la prueba.
 
 ***
 ### Pruebas E2E con Kraken:
