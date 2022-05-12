@@ -148,8 +148,8 @@ Configure el archivo properties.json con las variables de su instalación y las 
 
 #### 4 Ejecutar cada archivo feature
 
-Los escenarios de prueba de encuentran en el directorio principal. Para correr una prueba debe mover el archivo correspondiente a la carpeta features. Tenga en cuenta que solo debe existir un archivo .feature en esta ruta.
+Los escenarios de prueba se encuentran en el directorio principal. Para correr una prueba debe mover el archivo correspondiente a la carpeta features. Tenga en cuenta que solo debe existir un archivo .feature en esta ruta.
 
 Se debe ejecutar cada archivo de forma independiente siguiendo el orden del numeral asociado al archivo para que las pruebas salgan de forma correcta.
 
-Para correr la prueba, ejecute el comando ./node_modules/kraken-node/bin/kraken-node run en la ruta principal del proyecto.
+Para correr la prueba, ejecute el comando `./node_modules/kraken-node/bin/kraken-node run` en la ruta principal del proyecto.
