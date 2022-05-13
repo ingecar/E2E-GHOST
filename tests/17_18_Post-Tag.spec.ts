@@ -1,18 +1,13 @@
 import { test, expect } from '@playwright/test';
-const credentials = {
-    page: 'http://localhost:2368/ghost/#/signin',
-    siteTitle: 'TestSiteElsa',
-    fullName: 'Elsa Pato',
-    email: 'correo@correo.com',
-    pass: 'ElsaTest15+'
-  };
+import { environment } from '../environment';
+
 const nombreTagPrueba = 'NuevaTagPruebas'
 const nombrePostPrueba = 'NuevoPostPruebas'
 
 test.beforeEach(async ({ page }) => {
-    await page.goto(credentials.page);
-    await page.type('input[name=identification]', credentials.email)
-    await page.type('input[name=password]', credentials.pass)
+    await page.goto(environment.urlGhost446);
+    await page.type('input[name=identification]', environment.email)
+    await page.type('input[name=password]', environment.pass)
     await page.click('button[type=submit]')
 });
 
@@ -66,7 +61,7 @@ test.describe('CrearTag, CrearPost, AsociarTagPost, DesasociarTagPost', () => {
             await page.locator('div[role=button]', { hasText: 'All tags'}).click(),
             await page.locator('li[role=option]', { hasText: nombreTagPrueba}).click(),
             await new Promise(r => setTimeout(r, 1000)),
-            await page.screenshot({ path: 'screenshots/Post con tag asociada.png', fullPage: true })
+            await page.screenshot({ path: environment.pathScreenshots_v446 + 'Post con tag asociada.png', fullPage: true })
         ])
     })
     test('Desasociar Tag de un Post',async ({ page }) => {
@@ -90,7 +85,7 @@ test.describe('CrearTag, CrearPost, AsociarTagPost, DesasociarTagPost', () => {
             await page.locator('div[role=button]', { hasText: 'All tags'}).click(),
             await page.locator('li[role=option]', { hasText: nombreTagPrueba}).click(),
             await new Promise(r => setTimeout(r, 1000)),
-            await page.screenshot({ path: 'screenshots/Post sin tag asociada.png', fullPage: true })
+            await page.screenshot({ path: environment.pathScreenshots_v446 + 'Post sin tag asociada.png', fullPage: true })
         ])
 
         await page.click('a[title=Published]')

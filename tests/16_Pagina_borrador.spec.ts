@@ -1,17 +1,12 @@
 import { test, expect } from '@playwright/test';
-const credentials = {
-    page: 'http://localhost:2368/ghost/#/signin',
-    siteTitle: 'TestSiteElsa',
-    fullName: 'Elsa Pato',
-    email: 'correo@correo.com',
-    pass: 'ElsaTest15+'
-  };
+import { environment } from '../environment';
+
 const nombrePaginaPrueba = 'NuevaPaginaPruebas'
 
 test.beforeEach(async ({ page }) => {
-    await page.goto(credentials.page);
-    await page.type('input[name=identification]', credentials.email)
-    await page.type('input[name=password]', credentials.pass)
+    await page.goto(environment.urlGhost446);
+    await page.type('input[name=identification]', environment.email)
+    await page.type('input[name=password]', environment.pass)
     await page.click('button[type=submit]')
 });
 
@@ -30,7 +25,7 @@ test('Pagina como borrador', async ({ page }) => {
         page.waitForNavigation(),
         await page.locator('a span', { hasText: 'Pages'}).click(),
         await page.locator('li', { hasText: 'Pages' }).click(),
-        await page.screenshot({ path: 'screenshots/Pagina como borrador.png', fullPage: true }),            
+        await page.screenshot({ path: environment.pathScreenshots_v446 + 'Pagina como borrador.png', fullPage: true }),            
     ])
     await page.locator('li', { hasText: 'Pages' }).click();
     await page.locator('h3', { hasText: nombrePaginaPrueba }).click();
