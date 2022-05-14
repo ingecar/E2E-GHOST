@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+<<<<<<< HEAD
 const credentials = {
     page: 'http://localhost:2368/ghost/#/signin',
     siteTitle: 'TestSiteElsa',
@@ -6,12 +7,16 @@ const credentials = {
     email: 'jorge.cardonaor@gmail.com',
     pass: '0123456789'
   };
+=======
+import { environment } from '../environment';
+
+>>>>>>> 35a8eaaa386756ac9d5eed595c2000c688c9fc1a
 const nombrePostPrueba = 'NuevoPostPruebas'
 
 test.beforeEach(async ({ page }) => {
-    await page.goto(credentials.page);
-    await page.type('input[name=identification]', credentials.email)
-    await page.type('input[name=password]', credentials.pass)
+    await page.goto(environment.urlGhost446);
+    await page.type('input[name=identification]', environment.email)
+    await page.type('input[name=password]', environment.pass)
     await page.click('button[type=submit]')
 });
 
@@ -36,7 +41,7 @@ test.describe('Crear, editar, despublicar, eliminar posts', () => {
             page.waitForNavigation(),
             await page.locator('a span', { hasText: 'Posts'}).click(),
             await page.click('a[title=Published]'),
-            await page.screenshot({ path: 'screenshots/Nuevo post publicado.png', fullPage: true }),            
+            await page.screenshot({ path: environment.pathScreenshots_v446 + 'Nuevo post publicado.png', fullPage: true }),            
         ])
     })
     test('Editar un Post',async ({ page }) => {
@@ -55,9 +60,10 @@ test.describe('Crear, editar, despublicar, eliminar posts', () => {
             page.waitForNavigation(),
             await page.locator('a span', { hasText: 'Posts'}).click(),
             await page.click('a[title=Published]'),
-            await page.screenshot({ path: 'screenshots/Post editado.png', fullPage: true })
+            await page.screenshot({ path: environment.pathScreenshots_v446 + 'Post editado.png', fullPage: true })
         ])
     })
+<<<<<<< HEAD
     // test('Despublicar un post',async ({page}) => {
     //     await page.locator('li', { hasText: 'Posts' }).click();
     //     await page.click('a[title=Published]')
@@ -92,4 +98,40 @@ test.describe('Crear, editar, despublicar, eliminar posts', () => {
     //         await page.screenshot({ path: 'screenshots/Post eliminado.png', fullPage: true })
     //     ])
     // })
+=======
+    test('Despublicar un post',async ({page}) => {
+        await page.locator('li', { hasText: 'Posts' }).click();
+        await page.click('a[title=Published]')
+        // await new Promise(r => setTimeout(r, 2000));
+        await page.locator('li a h3', {hasText: nombrePostPrueba.toString()}).click()
+        await page.locator('div[role="button"]:has-text("Update")').click();
+        await page.click('div[class="gh-publishmenu-radio "]')
+        await page.locator('footer button span', {hasText: 'Unpublish'}).click();
+        await new Promise(r => setTimeout(r, 3000));
+        // Captura de pantalla
+        await Promise.all([
+            page.waitForNavigation(),
+            await page.locator('a span', { hasText: 'Posts'}).click(),
+            await page.click('a[title=Drafts]'),
+            await page.screenshot({ path: environment.pathScreenshots_v446 + 'Post despublicado.png', fullPage: true })
+        ])
+    })
+    test('Eliminar un Post despublicado',async ({ page }) => {
+        await page.locator('li', { hasText: 'Posts' }).click();
+        await page.click('a[title=Drafts]')
+        // await new Promise(r => setTimeout(r, 2000));
+        await page.locator('li a h3', {hasText: nombrePostPrueba.toString()}).click()
+        await page.click('button[title="Settings"]')
+        await page.locator('text= Delete post').click()
+        await new Promise(r => setTimeout(r, 1000));
+        await page.locator('h1').press('Enter');
+        await Promise.all([
+            page.waitForNavigation(),
+            await page.locator('a span', { hasText: 'Posts'}).click(),
+            await page.click('a[title=Drafts]'),
+            await new Promise(r => setTimeout(r, 1000)),
+            await page.screenshot({ path: environment.pathScreenshots_v446 + 'Post eliminado.png', fullPage: true })
+        ])
+    })
+>>>>>>> 35a8eaaa386756ac9d5eed595c2000c688c9fc1a
 })

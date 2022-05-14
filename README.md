@@ -1,20 +1,26 @@
 ### Participantes: 
-Cesar Hernan Garcia: ch.garciaa1@uniandes.edu.co.        
-Cesar Alexander Rivera Ordoñez: c.riverao@uniandes.edu.co.       
-Andres Perez Avilan: aa.pereza1@uniandes.edu.co.       
-Jorge Andres Cardona Ortiz: j.cardonao@uniandes.edu.co.       
+
+| Nombre | Correo |
+|-------------------|-------------|
+| Cesar Hernan Garcia Afanador | ch.garciaa1@uniandes.edu.co |
+| Cesar Alexander Rivera Ordoñez | c.riverao@uniandes.edu.co |
+| Alvaro Andres Perez Avilan | aa.pereza1@uniandes.edu.co |
+| Jorge Andres Cardona Ortiz | j.cardonao@uniandes.edu.co |
+
 ***
 ##  Escenarios de pruebas E2E de Ghost con Kraken y Playwright (Semana 5)
-Para esta semana se desarrollaron pruebas de extremo a extremo con las herramientas playwright y Kraken para las funcionalidades de Post, Tags, Pages, Members y Configuracion. se desarrollaron 20 escenarios de pruebas.
+Para esta semana se desarrollaron pruebas de extremo a extremo con las herramientas playwright y Kraken para las funcionalidades de Post, Tags, Pages, Miembros y Configuracion. se desarrollaron 20 escenarios de pruebas.
 
-#### Members: 
-Esta funcionalidad permite la creacion , edicion y eliminacion de miembros de Ghost
+#### Miembros: 
+Esta funcionalidad permite la construcción de una audiencia o comunidad de usuarios, los cuales pueden acceder a la aplicación para interactuar con ella, además de registrar nuevo contenido (posts y páginas) y suscribirse a contenido publicado por otros.
 #### Posts: 
-Esta funcionalidad perite la creacion , edicion y eliminacion de posts, gestion de publicacion y/o despublicacion  entre otras.
+Permite crear publicaciones dentro de la aplicación para cada una de las páginas, a partir de una imagen suministrada por el usuario, un título y la descripción detallada del mismo.
 #### Tags: 
-Esta funcionalidad permite crear, editar
+La aplicación permite crear, editar etiquetas públicas y privadas para asignar a las publicaciones realizadas, adicionalmente se pueden asociar imágenes, descripción y personalizar los colores de cada una.
 #### Pages: 
+Esta característica de la aplicación permite crear una nueva pagina, indicando su titulo, descripción e imagen asociada. Durante el proceso se puede ver una pre visualización ajustada a diferentes tamaños de pantalla (móvil y web) y su publicación puede ser inmediata o programarla para una fecha posterior.
 #### Configuracion: 
+Desde este menú se puede acceder a un conjunto de opciones de configuración de diseño del home page y los posts del sitio web, adicionalmente es posible realizar cambios en los menús de navegación, reorganizarlos de acuerdo a las preferencias del usuario y demás características generales como el título del sitio, la zona horaria, lenguaje entre otros.
 ***
 
 #### Escenario 1: Crear miembro 
@@ -48,34 +54,34 @@ Iniciar sesión en ghost, acceder al menú posts, click en un post, click en ico
 Iniciar sesión en ghost, acceder al menú posts, click en un post, click en icono post settings, click en delete post, confirmar la eliminación y verificar que se elimino correctamente.
 
 #### Escenario 11: Modificar información de configuración
-Iniciar sesión en ghost, acceder al menú settings, click en General, modificar el título y la descripción, modificar la zona horaria, cambiar el idioma.
+Iniciar sesión en ghost, acceder al menú settings, click en General, modificar el título y la descripción, modificar la zona horaria, guardar cambios, cerrar la sesión.
 
 #### Escenario 12: Cambiar enlaces a redes sociales
-Iniciar sesión en ghost, acceder al menú settings, click en General, click en el botón Social accounts, modificar los enlaces, click en guardar, verificar en el sitio público los nuevos enlaces.
+Iniciar sesión en ghost, acceder al menú settings, click en General, click en el botón Social accounts, modificar los enlaces, guardar cambios, cerrar la sesión.
 
 #### Escenario 13: Cambiar el sitio a visibilidad privada
-Iniciar sesión en ghost, acceder al menú settings, click en General, click en Make this site private, acceder al sitio web con otro usuario, verificar que esté privado, volver nuevamente público el sitio, verificar con el otro usuario que sea público.
+Iniciar sesión en ghost, acceder al menú settings, click en General, click en Make this site private, guardar cambios, cerrar sesión, acceder al sitio web público, verificar que esté privado, realizar los pasos anteriores para volver nuevamente público el sitio, verificar nuevamente que el sitio sea público.
 
 #### Escenario 14: Crear una página
-Iniciar sesión en ghost, acceder al menú Pages, click en New page,  diligenciar los campos del formulario, click en publish, confirmar la creación, click en el menú Pages y verificar que se creo exitosamente.
+Iniciar sesión en ghost, acceder al menú Pages, click en New page,  diligenciar los campos del formulario, click en publish, confirmar la creación, click en el menú Pages y cerrar la sesión de usuario.
 
 #### Escenario 15: Programar publicación de página nueva
-Iniciar sesión en ghost, acceder al menú Pages, click en New page,  diligenciar los campos del formulario, click en publish, click en programar para despues, confirmar la creación, click en el menú Pages y verificar que se creó y que esté programada su publicación.
+Iniciar sesión en ghost, acceder al menú Pages, click en New page,  diligenciar los campos del formulario, click en publish, click en programar para despues, confirmar la creación, click en el menú Pages y cerrar la sesión de usuario.
 
 #### Escenario 16: Crear una página como borrador
-Iniciar sesión en ghost, acceder al menú Pages, click en New page,  diligenciar los campos del formulario, hacer click en volver a Pages,  verificar que existe la página creada con estado Draft.
+Iniciar sesión en ghost, acceder al menú Pages, click en New page,  diligenciar los campos del formulario, hacer click en volver a Pages, verificar que existe la página creada con estado Draft, cerrar sesión de usuario.
 
 #### Escenario 17: Asociar Post con un Tag
-Iniciar sesión en ghost, acceder al menú Post, seleccionar una Post creado, click en Post settings, seleccionar una tag, click en el dropdown menu Update, click en Update, acceder con otro usuario al sitio público, buscar los post con la tag creada, verificar que el post este listado
+Iniciar sesión en ghost, acceder al menú Post, seleccionar una Post creado, click en Post settings, seleccionar una tag, click en el dropdown menu Update, click en Update, cerrar la sesión del usuario.
 
 #### Escenario 18: Desasociar un tag en Post
-Iniciar sesión en ghost, acceder al menú Post, seleccionar una Post creado, click en Post settings, deseleccionar el tag, click en el dropdown menu Update, click en Update, acceder con otro usuario al sitio público, buscar los post con la tag creada, verificar que el post no este listado
+Iniciar sesión en ghost, acceder al menú Post, seleccionar una Post creado, click en Post settings, deseleccionar el tag, click en el dropdown menu Update, click en Update, cerrar la sesión del usuario.
 
 #### Escenario 19: Modificar perfil de usuario autenticado
-Iniciar sesión en Ghost, hacer click en botón de configuración de perfil, modificar nombre, guardar cambios, verificar en el dropup menu que aparezca el nuevo nombre.
+Iniciar sesión en Ghost, hacer click en botón de configuración de perfil, modificar nombre, guardar cambios, cerrar la sesión.
 
 #### Escenario 20: Cerrar sesión de miembro Staff
-Iniciar sesión en Ghost, hacer click en botón de configuración de perfil, click en Sign out, verificar que no se puede acceder al dashboard
+Iniciar sesión en Ghost, hacer click en botón de configuración de perfil, click en Sign out.
 
 ***
 ### Pruebas E2E con playwright:
@@ -118,9 +124,32 @@ npx playwright test
 ```
 npx playwright test tests/nombre_test.ts
 ```
+Se debe tener en cuenta que en los archivos se encuentra precargado el usuario y la contraseña de Ghost (la cual es independiente para cada tester). Se debe cambiar antes de iniciar la prueba.
 
 ***
 ### Pruebas E2E con Kraken:
 
-1. Instalar kraken...
+#### 1. Clonar el proyecto
 
+git clone https://github.com/criverao/E2E_Ghost_Kraken.git
+
+#### 2 Instalar Kraken según el turorial
+
+Para instalar Kraken siga las intrucciones de la página oficial de la herramienta:
+
+https://thesoftwaredesignlab.github.io/Kraken/#installation
+
+#### 3 Actualizar el archivo properties.json
+
+Configure el archivo properties.json con las variables de su instalación y las credencciales de acceso a Ghost:
+- Cambiar la propiedad USER por el usuario del GHOST local que se utilizará para las pruebas, debe ser un usuario administrador. 
+- Cambiar la propiedad PASSWORD por el password del usuario del GHOST local que se utilizará para las pruebas. 
+- Cambiar la propiedad RUTA por la ruta del GHOST loca que será usado para pruebas. 
+
+#### 4 Ejecutar cada archivo feature
+
+Los escenarios de prueba se encuentran en el directorio principal. Para correr una prueba debe mover el archivo correspondiente a la carpeta features. Tenga en cuenta que solo debe existir un archivo .feature en esta ruta.
+
+Se debe ejecutar cada archivo de forma independiente siguiendo el orden del numeral asociado al archivo para que las pruebas salgan de forma correcta.
+
+Para correr la prueba, ejecute el comando `./node_modules/kraken-node/bin/kraken-node run` en la ruta principal del proyecto.
