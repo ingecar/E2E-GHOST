@@ -5,6 +5,6 @@ export const environment = {
     pathScreenshots_v342: 'screenshots_v342/',
     siteTitle: 'TestSiteElsa',
     fullName: 'Elsa Pato',
-    email: 'correo@correo.com',
-    pass: 'ElsaTest15+'
+    email: 'jorge.cardonaor@gmail.com',
+    pass: '0123456789'
 };
