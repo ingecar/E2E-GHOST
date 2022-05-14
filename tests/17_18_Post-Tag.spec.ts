@@ -11,7 +11,7 @@ test.beforeEach(async ({ page }) => {
     await page.click('button[type=submit]')
 });
 
-test.describe('CrearTag, CrearPost, AsociarTagPost, DesasociarTagPost', () => {
+test.describe('CrearTag, CrearPost, AsociarTagPost, DesasociarTagPost', async() => {
     test('Crear Tag', async ({ page }) => {
         await page.locator('li', { hasText: 'Tags' }).click();
         await page.locator('header section a', {hasText: 'New tag'}).click();
@@ -40,14 +40,22 @@ test.describe('CrearTag, CrearPost, AsociarTagPost, DesasociarTagPost', () => {
         await page.locator('button:has-text("Publish")').click()
     })
     test('Asociar Tag a un Post',async ({ page }) => {
+        let nombrePrueba = 'AsociarTagPost-'
+        let nombreScreen = environment.pathScreenshots_v446 + nombrePrueba;
+        
+        await new Promise(r => setTimeout(r, 3000));
+        await page.screenshot({ path: nombreScreen+'1.png', fullPage: true });
         await page.locator('ul li a', { hasText: 'Posts' }).click();
         await page.click('a[title=Published]')
         await new Promise(r => setTimeout(r, 1000));
+        await page.screenshot({ path: nombreScreen+'2.png', fullPage: true });
         await page.locator('li a h3', {hasText: nombrePostPrueba.toString()}).click()
         await page.click('button[title="Settings"]')
+        await page.screenshot({ path: nombreScreen+'3.png', fullPage: true });
         await page.locator('#tag-input').click()
         await new Promise(r => setTimeout(r, 1000));
         await page.locator('li', {hasText: nombreTagPrueba}).click();
+        await page.screenshot({ path: nombreScreen+'4.png', fullPage: true });
         await page.locator('div[role="button"]:has-text("Update")').click();
         // Click Update
         await new Promise(r => setTimeout(r, 1000));
@@ -61,18 +69,26 @@ test.describe('CrearTag, CrearPost, AsociarTagPost, DesasociarTagPost', () => {
             await page.locator('div[role=button]', { hasText: 'All tags'}).click(),
             await page.locator('li[role=option]', { hasText: nombreTagPrueba}).click(),
             await new Promise(r => setTimeout(r, 1000)),
-            await page.screenshot({ path: environment.pathScreenshots_v446 + 'Post con tag asociada.png', fullPage: true })
+            await page.screenshot({ path: nombreScreen+'5.png', fullPage: true })
         ])
     })
     test('Desasociar Tag de un Post',async ({ page }) => {
+        let nombrePrueba = 'DesasociarTagPost-'
+        let nombreScreen = environment.pathScreenshots_v446 + nombrePrueba;
+        
+        await new Promise(r => setTimeout(r, 3000));
+        await page.screenshot({ path: nombreScreen+'1.png', fullPage: true });
         await page.locator('ul li a', { hasText: 'Posts' }).click();
         await page.click('a[title=Published]')
         await new Promise(r => setTimeout(r, 1000));
+        await page.screenshot({ path: nombreScreen+'2.png', fullPage: true });
         await page.locator('li a h3', {hasText: nombrePostPrueba.toString()}).click()
         await page.click('button[title="Settings"]')
+        await page.screenshot({ path: nombreScreen+'3.png', fullPage: true });
         await page.locator('#tag-input').click()
         await new Promise(r => setTimeout(r, 1000));
         await page.locator('#tag-input').press('Backspace');
+        await page.screenshot({ path: nombreScreen+'4.png', fullPage: true });
         await page.locator('div[role="button"]:has-text("Update")').click();
         // Click Update
         await new Promise(r => setTimeout(r, 1000));
@@ -85,7 +101,7 @@ test.describe('CrearTag, CrearPost, AsociarTagPost, DesasociarTagPost', () => {
             await page.locator('div[role=button]', { hasText: 'All tags'}).click(),
             await page.locator('li[role=option]', { hasText: nombreTagPrueba}).click(),
             await new Promise(r => setTimeout(r, 1000)),
-            await page.screenshot({ path: environment.pathScreenshots_v446 + 'Post sin tag asociada.png', fullPage: true })
+            await page.screenshot({ path: nombreScreen+'5.png', fullPage: true })
         ])
 
         await page.click('a[title=Published]')
