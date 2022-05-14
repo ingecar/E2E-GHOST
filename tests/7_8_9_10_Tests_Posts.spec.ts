@@ -3,8 +3,8 @@ const credentials = {
     page: 'http://localhost:2368/ghost/#/signin',
     siteTitle: 'TestSiteElsa',
     fullName: 'Elsa Pato',
-    email: 'correo@correo.com',
-    pass: 'ElsaTest15+'
+    email: 'jorge.cardonaor@gmail.com',
+    pass: '0123456789'
   };
 const nombrePostPrueba = 'NuevoPostPruebas'
 
@@ -58,38 +58,38 @@ test.describe('Crear, editar, despublicar, eliminar posts', () => {
             await page.screenshot({ path: 'screenshots/Post editado.png', fullPage: true })
         ])
     })
-    test('Despublicar un post',async ({page}) => {
-        await page.locator('li', { hasText: 'Posts' }).click();
-        await page.click('a[title=Published]')
-        // await new Promise(r => setTimeout(r, 2000));
-        await page.locator('li a h3', {hasText: nombrePostPrueba.toString()}).click()
-        await page.locator('div[role="button"]:has-text("Update")').click();
-        await page.click('div[class="gh-publishmenu-radio "]')
-        await page.locator('footer button span', {hasText: 'Unpublish'}).click();
-        await new Promise(r => setTimeout(r, 3000));
-        // Captura de pantalla
-        await Promise.all([
-            page.waitForNavigation(),
-            await page.locator('a span', { hasText: 'Posts'}).click(),
-            await page.click('a[title=Drafts]'),
-            await page.screenshot({ path: 'screenshots/Post despublicado.png', fullPage: true })
-        ])
-    })
-    test('Eliminar un Post despublicado',async ({ page }) => {
-        await page.locator('li', { hasText: 'Posts' }).click();
-        await page.click('a[title=Drafts]')
-        // await new Promise(r => setTimeout(r, 2000));
-        await page.locator('li a h3', {hasText: nombrePostPrueba.toString()}).click()
-        await page.click('button[title="Settings"]')
-        await page.locator('text= Delete post').click()
-        await new Promise(r => setTimeout(r, 1000));
-        await page.locator('h1').press('Enter');
-        await Promise.all([
-            page.waitForNavigation(),
-            await page.locator('a span', { hasText: 'Posts'}).click(),
-            await page.click('a[title=Drafts]'),
-            await new Promise(r => setTimeout(r, 1000)),
-            await page.screenshot({ path: 'screenshots/Post eliminado.png', fullPage: true })
-        ])
-    })
+    // test('Despublicar un post',async ({page}) => {
+    //     await page.locator('li', { hasText: 'Posts' }).click();
+    //     await page.click('a[title=Published]')
+    //     // await new Promise(r => setTimeout(r, 2000));
+    //     await page.locator('li a h3', {hasText: nombrePostPrueba.toString()}).click()
+    //     await page.locator('div[role="button"]:has-text("Update")').click();
+    //     await page.click('div[class="gh-publishmenu-radio "]')
+    //     await page.locator('footer button span', {hasText: 'Unpublish'}).click();
+    //     await new Promise(r => setTimeout(r, 3000));
+    //     // Captura de pantalla
+    //     await Promise.all([
+    //         page.waitForNavigation(),
+    //         await page.locator('a span', { hasText: 'Posts'}).click(),
+    //         await page.click('a[title=Drafts]'),
+    //         await page.screenshot({ path: 'screenshots/Post despublicado.png', fullPage: true })
+    //     ])
+    // })
+    // test('Eliminar un Post despublicado',async ({ page }) => {
+    //     await page.locator('li', { hasText: 'Posts' }).click();
+    //     await page.click('a[title=Drafts]')
+    //     // await new Promise(r => setTimeout(r, 2000));
+    //     await page.locator('li a h3', {hasText: nombrePostPrueba.toString()}).click()
+    //     await page.click('button[title="Settings"]')
+    //     await page.locator('text= Delete post').click()
+    //     await new Promise(r => setTimeout(r, 1000));
+    //     await page.locator('h1').press('Enter');
+    //     await Promise.all([
+    //         page.waitForNavigation(),
+    //         await page.locator('a span', { hasText: 'Posts'}).click(),
+    //         await page.click('a[title=Drafts]'),
+    //         await new Promise(r => setTimeout(r, 1000)),
+    //         await page.screenshot({ path: 'screenshots/Post eliminado.png', fullPage: true })
+    //     ])
+    // })
 })
