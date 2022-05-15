@@ -122,6 +122,7 @@ npx playwright test
 ```
 NOTA: 
 * Tener en cuenta que las versiones utilizadas fueron: Ghost v3.42 y Ghost v4.46.
+* Los archivos de pruebas diseñados para la Versión 3.42 de Ghost, se identifican con el sufijo `V3.42.spec.ts`, por ejemplo: `4_5_6_Test_TagsV3.42.spec.ts`. Los demás son diseñados para la versión 4.46.
 * Para la correcta ejecución de los Test y por facilidad, las dos versiones deben tener el mismo usuario y contraseña de administrador. Estas credenciales se pueden cambiar desde el archivo `environment.ts`. Desde este archivo, también se puede cambiar la Url de cada versión, en caso de que sea necesario cambiarlas.
 * A medida que se van ejecutando los test, podrá ver que se van generando los screenshots en carpetas independientes para cada versión `screenshots_v342` y `screenshots_v446` (estas rutas se pueden visualizar en el archivo `environment.ts`).
 
