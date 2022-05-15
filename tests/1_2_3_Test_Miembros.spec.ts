@@ -60,7 +60,7 @@ test.describe('Crear, editar, eliminar miembro', () => {
 
         await page.locator('button[role="button"]:has-text(".settings_svg__a{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linej")').click();
         await page.locator('button span', { hasText: 'Delete member' }).click();
-        await new Promise(r => setTimeout(r, 2000));
+        await new Promise(r => setTimeout(r, 3500));
         await page.locator('h1').press('Enter');
         
         await Promise.all([
