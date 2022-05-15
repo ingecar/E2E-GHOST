@@ -1,49 +1,42 @@
 import { test, expect } from '@playwright/test';
+import { environment } from '../environment';
 
-test('test', async ({ page }) => {
+const TagName = 'Test Tag';
+const TagDescription = 'Description Tag Example'
 
-  // Go to http://localhost:2368/ghost/#/signin
-  await page.goto('http://localhost:2368/ghost/#/signin');
+test.beforeEach(async ({ page }) => {
+    await page.goto(environment.urlGhost446);
+    await page.screenshot({ path: environment.pathScreenshots_v446 + 'Login.png' , fullPage: true }),            
+    await page.type('input[name=identification]', environment.email)
+    await page.type('input[name=password]', environment.pass)
+    await page.click('button[type=submit]')
+});
 
-  // Click [placeholder="jamie\@example\.com"]
-  await page.locator('[placeholder="jamie\\@example\\.com"]').click();
+test.describe('Editar Configuraciones', () => {
 
-  // Fill [placeholder="jamie\@example\.com"]
-  await page.locator('[placeholder="jamie\\@example\\.com"]').fill('Jorge.cardonaor@gmail.com');
+  test('Editar Titulo', async ({ page }) => {
 
-  // Click [placeholder="•••••••••••••••"]
-  await page.locator('[placeholder="•••••••••••••••"]').click();
+      // Click a:has-text(".page_svg__a{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:")
+      await page.locator('a:has-text(".page_svg__a{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:")').click();
+      await expect(page).toHaveURL('http://localhost:2368/ghost/#/pages');
 
-  // Fill [placeholder="•••••••••••••••"]
-  await page.locator('[placeholder="•••••••••••••••"]').fill('0123456789');
+      // Click text=New page
+      await page.locator('text=New page').click();
+      await expect(page).toHaveURL('http://localhost:2368/ghost/#/editor/page');
 
-  // Click button:has-text("Sign in →")
-  await Promise.all([
-    page.waitForNavigation(/*{ url: 'http://localhost:2368/ghost/#/dashboard' }*/),
-    page.locator('button:has-text("Sign in →")').click()
-  ]);
+      // Click textarea
+      await page.locator('textarea').click();
 
-  // Click a:has-text(".page_svg__a{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:")
-  await page.locator('a:has-text(".page_svg__a{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:")').click();
-  await expect(page).toHaveURL('http://localhost:2368/ghost/#/pages');
+      // Press CapsLock
+      await page.locator('textarea').press('CapsLock');
 
-  // Click text=New page
-  await page.locator('text=New page').click();
-  await expect(page).toHaveURL('http://localhost:2368/ghost/#/editor/page');
+      // Fill textarea
+      await page.locator('textarea').fill('Nueva');
 
-  // Click textarea
-  await page.locator('textarea').click();
-
-  // Press CapsLock
-  await page.locator('textarea').press('CapsLock');
-
-  // Fill textarea
-  await page.locator('textarea').fill('Nueva');
-
-  // Click .koenig-editor__editor
-  await Promise.all([
-    page.waitForNavigation(/*{ url: 'http://localhost:2368/ghost/#/editor/page/6277f4076609b10a183d8acc' }*/),
-    page.locator('.koenig-editor__editor').click()
+      // Click .koenig-editor__editor
+      await Promise.all([
+        page.waitForNavigation(/*{ url: 'http://localhost:2368/ghost/#/editor/page/6277f4076609b10a183d8acc' }*/),
+        page.locator('.koenig-editor__editor').click()
   ]);
 
   // Press CapsLock
