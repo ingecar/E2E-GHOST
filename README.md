@@ -120,16 +120,21 @@ npx playwright install
 ```
 npx playwright test
 ```
+NOTA: 
+* Tener en cuenta que las versiones utilizadas fueron: Ghost v3.42 y Ghost v4.46.
+* Para la correcta ejecución de los Test y por facilidad, las dos versiones deben tener el mismo usuario y contraseña de administrador. Estas credenciales se pueden cambiar desde el archivo `environment.ts`. Desde este archivo, también se puede cambiar la Url de cada versión, en caso de que sea necesario cambiarlas.
+* A medida que se van ejecutando los test, podrá ver que se van generando los screenshots en carpetas independientes para cada versión `screenshots_v342` y `screenshots_v446` (estas rutas se pueden visualizar en el archivo `environment.ts`).
+
 #### 6. Ejecutar un tests especifico
 ```
 npx playwright test tests/nombre_test.ts
 ```
 #### 7. Generación de Reporte VRT
 
-Cuando se hayan ejecutado todas las pruebas relacionadas (de las dos versiones), se puede generar el reporte de la prueba de regresión visual:
+Cuando se hayan ejecutado todas las pruebas relacionadas (de las dos versiones) y se hayan generado todas las imágenes en cada carpeta, se puede generar el reporte de la prueba de regresión visual:
 
-1. Ejecute el comando `node index.js`, el cual generará el reporte con la comparación de las imágenes utilizando la ResembleJs.
-2. Abra en un navegador, el archivo `report.html` ubicado en la carpeta `/results/`.
+1. Ejecute el comando `node index.js`, el cual generará la comparación de los screenshots generados durante la ejecución de los test. También generará un reporte de dicha comparación utilizando la librería ResembleJs.
+2. Abra en un navegador, el archivo generado `report.html` ubicado en la carpeta `/results/`.
 
 ***
 ### Pruebas E2E con Kraken:
