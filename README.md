@@ -95,7 +95,7 @@ remote: Compressing objects: 100% (11/11), done.
 remote: Total 24 (delta 0), reused 0 (delta 0), pack-reused 0
 Recibiendo objetos: 100% (24/24), 4.39 KiB | 4.39 MiB/s, listo.
 ```
-#### 2 instalar playwright en ruta local con Typescript
+#### 2. instalar playwright en ruta local con Typescript
 ```
 cd E2E-GHOST 
 npm init playwright@latest
@@ -108,23 +108,28 @@ Initializing project in '.'
 ✔ Where to put your end-to-end tests? · tests
 ✔ Add a GitHub Actions workflow? (y/N) · false
 ```
-#### 3 Actualizar dependencias
+#### 3. Instalar ResembleJS
+```
+npm install resemblejs
+```
+#### 4. Actualizar dependencias
 ```
 npx playwright install  
 ```
-#### 3 Actualizar dependencias
-```
-npx playwright install  
-```
-#### 4 Ejecutar los tests
+#### 5. Ejecutar los tests
 ```
 npx playwright test
 ```
-#### 5 Ejecutar un tests especifico
+#### 6. Ejecutar un tests especifico
 ```
 npx playwright test tests/nombre_test.ts
 ```
-Se debe tener en cuenta que en los archivos se encuentra precargado el usuario y la contraseña de Ghost (la cual es independiente para cada tester). Se debe cambiar antes de iniciar la prueba.
+#### 7. Generación de Reporte VRT
+
+Cuando se hayan ejecutado todas las pruebas relacionadas (de las dos versiones), se puede generar el reporte de la prueba de regresión visual:
+
+1. Ejecute el comando `node index.js`, el cual generará el reporte con la comparación de las imágenes utilizando la ResembleJs.
+2. Abra en un navegador, el archivo `report.html` ubicado en la carpeta `/results/`.
 
 ***
 ### Pruebas E2E con Kraken:
