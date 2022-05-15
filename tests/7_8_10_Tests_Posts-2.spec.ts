@@ -14,22 +14,25 @@ test.describe('Crear, editar, eliminar posts', () => {
     test('Crear un Post', async ({ page }) => {
         let nombrePrueba = 'CrearPost-'
         let nombreScreen = environment.pathScreenshots_v342 + nombrePrueba;
-        
-        await new Promise(r => setTimeout(r, 5000));
+        await new Promise(r => setTimeout(r, 8000));
         await page.screenshot({ path: nombreScreen+'1.png', fullPage: true });
+
         await page.locator('li', { hasText: 'Posts' }).click();
         await page.locator('section a span', {hasText: 'New post'}).click();
         await new Promise(r => setTimeout(r, 1000));
         // await expect(page).toHaveURL('http://localhost:2368/ghost/#/editor/post');
-        await page.screenshot({ path: nombreScreen+'2.png', fullPage: true });
         await page.type('textarea[placeholder="Post Title"]', nombrePostPrueba);
+        await page.screenshot({ path: nombreScreen+'2.png', fullPage: true });
+        
         await page.locator('textarea[placeholder="Post Title"]').press('Tab');
         // Click Publish
-        await page.screenshot({ path: nombreScreen+'3.png', fullPage: true });
+        
         await page.locator('div[role="button"]:has-text("Publish")').click();
+        await page.screenshot({ path: nombreScreen+'3.png', fullPage: true });
         // Click Publish
-        await page.screenshot({ path: nombreScreen+'4.png', fullPage: true });
+        
         await page.locator('button:has-text("Publish")').click();
+        await page.screenshot({ path: nombreScreen+'4.png', fullPage: true });
         await new Promise(r => setTimeout(r, 3000));
         // Captura de pantalla
         await Promise.all([

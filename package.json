@@ -17,5 +17,9 @@
   "homepage": "https://github.com/ingecar/E2E-GHOST#readme",
   "devDependencies": {
     "@playwright/test": "^1.21.1"
+  },
+  "dependencies": {
+    "playwright": "^1.22.0",
+    "resemblejs": "^4.1.0"
   }
 }
