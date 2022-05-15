@@ -162,7 +162,7 @@ Se debe ejecutar cada archivo de forma independiente siguiendo el orden del nume
 
 Para correr la prueba, ejecute el comando `./node_modules/kraken-node/bin/kraken-node run` en la ruta principal del proyecto.
 
-La ejecución de cada paso en un escenario, generará una captura de pantalla, la cual quedará almacenada en la ruta `/screenshots/{appVersion}/{featureFileName}` y con el nombre de la imagen correspondiente con el paso de la ejecución. Tenga en cuenta la importancia de variable de configuración `appVersion` para definir la ruta de los _screenshots_.
+La ejecución de cada paso en un escenario, generará una imagen de la captura de pantalla, la cual quedará almacenada en la ruta `/screenshots/{appVersion}/{featureFileName}` y con el nombre de la imagen correspondiente con el paso de la ejecución. Tenga en cuenta la importancia de variable de configuración `appVersion` para definir la ruta de los _screenshots_ y donde `featureFileName` corresponde al nombre del archivo .feature bajo ejecución.
 
 #### 6. Generación de Reporte VRT
 
