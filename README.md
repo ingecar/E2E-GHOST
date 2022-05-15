@@ -132,7 +132,7 @@ npx playwright test tests/nombre_test.ts
 ```
 #### 7. Generación de Reporte VRT
 
-Cuando se hayan ejecutado todas las pruebas relacionadas (de las dos versiones) y se hayan generado todas las imágenes en cada carpeta, se puede generar el reporte de la prueba de regresión visual:
+Cuando se hayan ejecutado todas las pruebas relacionadas (de las dos versiones) y se hayan generado todas las imágenes en cada carpeta, las cuales se generaron mediante una estrategia de captura de screenshots cada vez que se presentaran cambios presentados en las interfaces de usuario para luego proceder oc la generación  del reporte de la prueba de regresión visual:
 
 1. Ejecute el comando `node index.js`, el cual generará la comparación de los screenshots generados durante la ejecución de los test. También generará un reporte de dicha comparación utilizando la librería ResembleJs.
 2. Abra en un navegador, el archivo generado `report.html` ubicado en la carpeta `/results/`.
