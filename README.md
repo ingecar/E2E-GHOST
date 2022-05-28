@@ -189,6 +189,4 @@ Una vez se hayan ejecutado una prueba en las dos versiones de la aplicación, po
 
 
 #### 7. Generacion de datos aleatorios.
-En el repsitorio que se relaciona a continuacion se encuentran todos los arhivos de pruebas e2e con generación y validación de datos utilizando faker y mockaroo
-
-https://github.com/ingecar/DATA_TEST_GHOST
+En el repsitorio que se relaciona a continuacion se encuentran todos los arhivos de pruebas e2e con generación y validación de datos utilizando faker y mockaroo:  https://github.com/ingecar/DATA_TEST_GHOST
