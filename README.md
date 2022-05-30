@@ -7,8 +7,14 @@
 | Alvaro Andres Perez Avilan | aa.pereza1@uniandes.edu.co |
 | Jorge Andres Cardona Ortiz | j.cardonao@uniandes.edu.co |
 
+### Estrategia de pruebas (Entrega semana 8): 
+
+[Semana8.zip](https://github.com/ingecar/E2E-GHOST/files/8795412/Semana8.zip)
+
+
+
 ***
-##  Escenarios de pruebas E2E de Ghost con Kraken y Playwright (Semana 5)
+##  Escenarios de pruebas E2E de Ghost con Kraken y Playwright
 Para esta semana se desarrollaron pruebas de extremo a extremo con las herramientas playwright y Kraken para las funcionalidades de Post, Tags, Pages, Miembros y Configuracion. se desarrollaron 20 escenarios de pruebas.
 
 #### Miembros: 
